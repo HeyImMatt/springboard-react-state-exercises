@@ -8,6 +8,10 @@ const EightBall = ({answers}) => {
     setBgColor(answers[num].color);
     setMessage(answers[num].msg);
   }
+  const reset = () => {
+    setBgColor('black');
+    setMessage('Think of a Question');
+  }
   const [message, setMessage] = useState('Think of a Question')
   const [bgColor, setBgColor] = useState('black')
   return (
@@ -17,6 +21,7 @@ const EightBall = ({answers}) => {
       <div className="EightBall" onClick={shakeEightBall} style={{backgroundColor: bgColor}}>
         <p><b>{message}</b></p>
       </div>
+      <button onClick={reset}>Reset</button>
     </>
   )
 }
