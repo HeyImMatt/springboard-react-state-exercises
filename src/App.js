@@ -1,11 +1,12 @@
 import React from 'react';
+import answers from './answers'
 import EightBall from './EightBall'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <EightBall />
+      <EightBall answers={answers} />
     </div>
   );
 }
