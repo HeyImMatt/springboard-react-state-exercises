@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import NumberGame from './NumberGame'
+import EightBall from './EightBall'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <NumberGame />
+      <EightBall />
     </div>
   );
 }
