@@ -1,7 +1,0 @@
-.BoxesBoard {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 20px auto;
-  width: 90vw;
-}
