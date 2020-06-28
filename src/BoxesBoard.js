@@ -1,19 +1,27 @@
 import React, {useState} from 'react';
 import Box from './Box'
-//import './BoxesBoard.css'
+import './BoxesBoard.css'
+
 
 
 const BoxesBoard = ({boxesCount, colors}) => {
+  const genRandom = () => Math.floor(Math.random() * colors.length);
+  console.log(boxesCount[2])
+
   return (
-    <div>
-      {boxesCount.map(b => <p>something</p>)}
+    <>
+      <div className='BoxesBoard'>
+        {boxesCount.map((b) => (
+        <Box color={colors[genRandom()]} />
+        ))}
+      </div>
       <button>Change</button>
-    </div>
+    </>
   )
 }
 
 BoxesBoard.defaultProps = {
-  boxesCount: new Array(16),
+  boxesCount: Array.apply(null, Array(16)).map(()=>{}),
   colors: [
     "aqua",
     "burlywood",
