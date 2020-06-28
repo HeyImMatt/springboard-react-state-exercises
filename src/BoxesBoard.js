@@ -5,16 +5,26 @@ import './BoxesBoard.css'
 
 
 const BoxesBoard = ({boxesCount, colors}) => {
-  const genRandom = () => Math.floor(Math.random() * colors.length);
+  const genRandom = (num) => Math.floor(Math.random() * num);
+  const selectBox = () => {
+    let boxId = genRandom(boxesCount.length);
+    let box = document.getElementById(boxId);
+    let boxes = document.querySelectorAll('.Box');
+    boxes.forEach(box => {
+      box.innerText = '';
+    })
+    box.style.backgroundColor = colors[genRandom(colors.length)];
+    box.innerText = 'Changed!'
+  }
 
   return (
     <>
       <div className='BoxesBoard'>
         {boxesCount.map((b) => (
-        <Box key={b} id={b} color={colors[genRandom()]} />
+        <Box key={b} id={b} color={colors[genRandom(colors.length)]} />
         ))}
       </div>
-      <button>Change</button>
+      <button onClick={selectBox}>Change</button>
     </>
   )
 }
