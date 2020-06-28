@@ -1,12 +1,11 @@
 import React from 'react';
-import answers from './answers'
-import EightBall from './EightBall'
+import BoxesBoard from './BoxesBoard'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <EightBall answers={answers} />
+      <BoxesBoard />
     </div>
   );
 }
