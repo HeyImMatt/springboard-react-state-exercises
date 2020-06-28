@@ -1,10 +1,9 @@
 import React from 'react';
 import './Box.css'
 
-const Box = ({color, isSelected}) => {
-  console.log(color)
+const Box = ({id, color, isSelected}) => {
   return (
-    <div className='Box' style={{backgroundColor: color}}>
+    <div id={id} className='Box' style={{backgroundColor: color}}>
       {isSelected && <p>Changed!</p>}
     </div>
   )

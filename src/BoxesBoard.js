@@ -6,13 +6,12 @@ import './BoxesBoard.css'
 
 const BoxesBoard = ({boxesCount, colors}) => {
   const genRandom = () => Math.floor(Math.random() * colors.length);
-  console.log(boxesCount[2])
 
   return (
     <>
       <div className='BoxesBoard'>
         {boxesCount.map((b) => (
-        <Box color={colors[genRandom()]} />
+        <Box key={b} id={b} color={colors[genRandom()]} />
         ))}
       </div>
       <button>Change</button>
@@ -21,7 +20,7 @@ const BoxesBoard = ({boxesCount, colors}) => {
 }
 
 BoxesBoard.defaultProps = {
-  boxesCount: Array.apply(null, Array(16)).map(()=>{}),
+  boxesCount: Array.apply(null, Array(16)).map((x, i)=>{return i + 1}),
   colors: [
     "aqua",
     "burlywood",
@@ -31,6 +30,13 @@ BoxesBoard.defaultProps = {
     "lightcoral",
     "violet",
     "pink",
+    "SteelBlue",
+    "Tan",
+    "Teal",
+    "Thistle",
+    "Peru",
+    "SpringGreen",
+    "tomato"
   ]
 }
 
